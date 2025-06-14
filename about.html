@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Haven - About Us</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Shoe Haven Logo" class="logo-image">
+                    Shoe Haven
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li id="loginBtnContainer"><a href="#" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li id="registerBtnContainer"><a href="#" id="registerBtn"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li id="profileBtnContainer" style="display:none;">
+                        <a href="#" id="profileBtn"><i class="fas fa-user-circle"></i></a>
+                        <div id="profileDropdown" class="profile-dropdown">
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero-section">
+            <div class="hero-image-container">
+                <img src="images/hero-section-about.png" alt="Shoe Haven About Us" class="hero-image">
+            </div>
+            <div class="container hero-text-container">
+                <h1>About Shoe Haven</h1>
+                <p>Crafting comfort and style, one step at a time.</p>
+            </div>
+        </section>
+
+        <section class="our-story-section">
+            <div class="container story-content">
+                <div class="story-image">
+                    <img src="images/Our Journey.png" alt="Our Story">
+                </div>
+                <div class="story-text">
+                    <h2>Our Journey: The Sole of Innovation</h2>
+                    <p>Founded in 20XX, Shoe Haven began with a simple yet ambitious goal: to create footwear that
+                        blends unparalleled comfort with cutting-edge style. We believe that what you wear on your feet
+                        can empower your every stride, whether you're conquering a mountain trail or navigating city
+                        streets.</p>
+                    <p>Our journey started in a small workshop, fueled by a passion for quality craftsmanship and
+                        innovative design. From meticulously selecting premium materials to employing skilled artisans,
+                        every pair of Shoe Haven footwear is a testament to our dedication to excellence.</p>
+                    <p>We're not just selling shoes; we're providing experiences, confidence, and the perfect foundation
+                        for your daily adventures. Join us as we continue to push the boundaries of footwear design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-mission-vision-section">
+            <div class="container">
+                <div class="mission-vision-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To craft innovative, comfortable, and stylish footwear that empowers individuals to express their
+                        unique personality and live life to the fullest, one confident step at a time.</p>
+                </div>
+                <div class="mission-vision-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To be the globally recognized leader in sustainable and design-forward footwear, setting new
+                        standards for quality, ethical production, and customer satisfaction.</p>
+                </div>
+                <div class="mission-vision-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Our Values</h3>
+                    <p>Quality, Innovation, Sustainability, Customer-Centricity, and Integrity are the cornerstones of
+                        everything we do at Shoe Haven.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="happy-customers-section">
+            <div class="container">
+                <h2>Voices of Our Happy Customers</h2>
+                <div class="customers-grid">
+                    <div class="customer-testimonial">
+                        <img src="images/virat.png" alt="Customer Avatar">
+                        <p class="quote">"I've never owned shoes this comfortable and stylish! Shoe Haven truly exceeded
+                            my expectations. My feet thank you!"</p>
+                        <p class="customer-name">- Virat</p>
+                    </div>
+                    <div class="customer-testimonial">
+                        <img src="images/anushka.png" alt="Customer Avatar">
+                        <p class="quote">"The quality is exceptional. I've been wearing my boots for months, and they
+                            still look brand new. Highly recommend!"</p>
+                        <p class="customer-name">- Anushka</p>
+                    </div>
+                    <div class="customer-testimonial">
+                        <img src="images/varun.png" alt="Customer Avatar">
+                        <p class="quote">"Finally found running shoes that offer both support and aesthetic appeal. My
+                            runs feel better than ever!"</p>
+                        <p class="customer-name">- Varun</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2>Meet Our Expert Team</h2>
+                <div class="team-grid">
+                    <div class="team-member" data-member-id="john">
+                        <img src="images/rohan.jpeg" alt="John Doe">
+                        <h3>Rohan Chaurasiya</h3>
+                        <p>Chief Footwear Designer</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/share/169eN2UhHQ/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/Rohan_2118?t=pLKI1vPMYt1MzIjyW1s3Sg&s=09"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/rohan-chaursiya-73492a34b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <a href="https://rohan211800.github.io/porfolio/" class="portfolio-btn">View Portfolio</a>
+                    </div>
+
+                    <div class="team-member" data-member-id="jane">
+                        <img src="images/priyanka.jpeg" alt="Jane Smith">
+                        <h3>Priyanka Kumari Sah</h3>
+                        <p>Head of Materials Innovation</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <button class="portfolio-btn">View Portfolio</button>
+                    </div>
+
+                    <div class="team-member" data-member-id="david">
+                        <img src="images/anubhav.jpeg" alt="David Lee">
+                        <h3>Anubhav Pradhan</h3>
+                        <p>Production Manager</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <button class="portfolio-btn">View Portfolio</button>
+                    </div>
+
+                    <div class="team-member" data-member-id="emily">
+                        <img src="images/pralon.jpeg" alt="Emily Clark">
+                        <h3>Pralon Basnet</h3>
+                        <p>Marketing & Brand Strategist</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <button class="portfolio-btn">View Portfolio</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section footer-about">
+                <h3>Shoe Haven</h3>
+                <p>Subscribe to our YouTube channel to watch more videos on shoe care, styling tips, and new arrivals.
+                </p>
+                <div class="social-icons-footer">
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section footer-office">
+                <h3>Office</h3>
+                <p>123 Shoe Lane<br>Fashion City, FC 123456<br>Styleland</p>
+                <p>shoeshaven@example.com</p>
+                <p>+00 - 1234567890</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Contact</h3>
+                <p>Got questions or need assistance? Reach out to us!</p>
+                <p><strong>Email:</strong> support@shoehaven.com</p>
+                <p><strong>Phone:</strong> +1 (555) SHOE-CARE</p>
+                <address>
+                    <strong>Address:</strong><br>
+                    Shoe Haven HQ<br>
+                    456 Footwear Blvd.<br>
+                    Comfortville, ST 98765<br>
+                    USA
+                </address>
+            </div>
+            <div class="footer-section footer-newsletter">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email id" aria-label="Email for Newsletter">
+                    <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+                </form>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="portfolio-modal-body">
+            </div>
+        </div>
+    </div>
+
+    <script src="about.js"></script><script src="auth.js"></script>
+</body>
+
+</html>

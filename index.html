@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Haven - Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Shoe Haven Logo" class="logo-image">
+                    Shoe Haven
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li id="loginBtnContainer"><a href="#" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li id="registerBtnContainer"><a href="#" id="registerBtn"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li id="profileBtnContainer" style="display:none;">
+                        <a href="#" id="profileBtn"><i class="fas fa-user-circle"></i></a>
+                        <div id="profileDropdown" class="profile-dropdown">
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="images/hero-section-home.png" alt="Stylish shoes on display" class="hero-background-image">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Step Up Your Style Game</h1>
+                    <p>Discover the perfect pair that defines your unique personality and comfort.</p>
+                    <a href="products.html" class="btn-primary">Explore Our Collection</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="offerings-section">
+            <div class="container">
+                <h2>OUR LATEST OFFERINGS</h2>
+                <div class="offerings-grid">
+                    <div class="offering-item">
+                        <img src="images/Urban Stride Sneaker.png" alt="Sneaker 1">
+                        <h3>Urban Stride Sneaker</h3>
+                        <p>Stylish & Comfortable</p>
+                    </div>
+                    <div class="offering-item">
+                        <img src="images/Classic Leather Boot.png" alt="Boot 1">
+                        <h3>Classic Leather Boot</h3>
+                        <p>Durable & Elegant</p>
+                    </div>
+                    <div class="offering-item">
+                        <img src="images/Summer Breeze Sandal.png" alt="Sandal 1">
+                        <h3>Summer Breeze Sandal</h3>
+                        <p>Lightweight & Breathable</p>
+                    </div>
+                    <div class="offering-item">
+                        <img src="images/Pro Runner X.png" alt="Running Shoe 1">
+                        <h3>Pro Runner X</h3>
+                        <p>Performance & Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-showcase-section">
+            <div class="container">
+                <h2>OUR FEATURED PRODUCTS</h2>
+                <div class="product-tabs">
+                    <button class="tab-button active" data-category="all">All</button>
+                    <button class="tab-button" data-category="sneakers">Sneakers</button>
+                    <button class="tab-button" data-category="boots">Boots</button>
+                    <button class="tab-button" data-category="sandals">Sandals</button>
+                    <button class="tab-button" data-category="formals">Formals</button>
+                </div>
+                <div class="product-grid">
+                    <div class="product-item" data-category="sneakers">
+                        <img src="images/AeroFlex Sneaker.png" alt="Sneaker A">
+                        <h4>AeroFlex Sneaker</h4>
+                        <p>$99.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-category="boots">
+                        <img src="images/Everest Trek Boot.png" alt="Boot B">
+                        <h4>Everest Trek Boot</h4>
+                        <p>$149.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-category="sandals">
+                        <img src="images/Coastal Walk Sandal.png" alt="Sandal C">
+                        <h4>Coastal Walk Sandal</h4>
+                        <p>$59.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-category="formals">
+                        <img src="images/Executive Oxford.png" alt="Formal D">
+                        <h4>Executive Oxford</h4>
+                        <p>$129.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                     <div class="product-item" data-category="sneakers">
+                        <img src="images/CloudRun X.png" alt="Sneaker E">
+                        <h4>CloudRun X</h4>
+                        <p>$109.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-item" data-category="boots">
+                        <img src="images/Urban Explorer Boot.png" alt="Boot F">
+                        <h4>Urban Explorer Boot</h4>
+                        <p>$139.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="perfect-match-section">
+            <div class="container perfect-match-content">
+                <div class="perfect-match-text">
+                    <h2>FIND YOUR PERFECT MATCH</h2>
+                    <p>Our curated selection ensures you find the ideal footwear for any occasion.</p>
+                    <div class="features-list">
+                        <div><i class="fas fa-check-circle"></i> <span>700+ Styles</span></div>
+                        <div><i class="fas fa-check-circle"></i> <span>Top Brands</span></div>
+                        <div><i class="fas fa-check-circle"></i> <span>5+ Years Experience</span></div>
+                    </div>
+                    <a href="products.html" class="btn-secondary">Shop Now</a>
+                </div>
+                <div class="perfect-match-image">
+                    <img src="images/perfect match.png" alt="Perfect Match">
+                </div>
+            </div>
+        </section>
+
+        <section class="almira-jewelry-section">
+            <div class="container almira-jewelry-content">
+                <div class="almira-image">
+                    <img src="images/CRAFTSMANSHIP.png" alt="Shoe Craftsmanship">
+                </div>
+                <div class="almira-text">
+                    <h2>EXCEPTIONAL CRAFTSMANSHIP</h2>
+                    <p>Every pair is meticulously crafted with attention to detail and quality materials, ensuring unparalleled comfort and durability.</p>
+                    <ul>
+                        <li><i class="fas fa-star"></i> Premium Materials</li>
+                        <li><i class="fas fa-star"></i> Hand-Stitched Details</li>
+                        <li><i class="fas fa-star"></i> Ergonomic Design</li>
+                    </ul>
+                    <a href="about.html" class="btn-tertiary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendation-section">
+            <div class="container">
+                <h2>TOP RECOMMENDATIONS</h2>
+                <div class="recommendation-grid">
+                    <div class="recommendation-item">
+                        <img src="images/Adventure Trail.png" alt="Recommended Shoe 1">
+                        <h4>Adventure Trail</h4>
+                        <p>$119.99</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <img src="images/Chic Loafer.png" alt="Recommended Shoe 2">
+                        <h4>Chic Loafer</h4>
+                        <p>$89.99</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <img src="images/Sporty Comfort.png" alt="Recommended Shoe 3">
+                        <h4>Sporty Comfort</h4>
+                        <p>$79.99</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <img src="images/Elegant Heel.png" alt="Recommended Shoe 4">
+                        <h4>Elegant Heel</h4>
+                        <p>$159.99</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="beyond-boundaries-section">
+            <div class="container">
+                <h2>BEYOND BOUNDARIES</h2>
+                <p>We push the limits of design and innovation to bring you footwear that stands out.</p>
+                <a href="blog.html" class="btn-quaternary">Read Our Story</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section footer-about">
+                <h3>Shoe Haven</h3>
+                <p>Subscribe to our YouTube channel to watch more videos on shoe care, styling tips, and new arrivals.</p>
+                <div class="social-icons-footer">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section footer-office">
+                <h3>Office</h3>
+                <p>123 Shoe Lane<br>Fashion City, FC 123456<br>Styleland</p>
+                <p>shoeshaven@example.com</p>
+                <p>+00 - 1234567890</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-newsletter">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email id" aria-label="Email for Newsletter">
+                    <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+                </form>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home.js"></script> <script src="auth.js"></script>
+</body>
+</html>

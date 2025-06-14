@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Haven - Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Shoe Haven Logo" class="logo-image">
+                    Shoe Haven
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart" class="active"></i> Cart</a></li>
+                    <li id="loginBtnContainer"><a href="#" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li id="registerBtnContainer"><a href="#" id="registerBtn"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li id="profileBtnContainer" style="display:none;">
+                        <a href="#" id="profileBtn"><i class="fas fa-user-circle"></i></a>
+                        <div id="profileDropdown" class="profile-dropdown">
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="checkout-hero-section">
+            <div class="hero-image-container">
+                <img src="images/hero-section-checkout.png" alt="Secure Checkout" class="hero-image">
+            </div>
+            <div class="container hero-text-container">
+                <h1>Secure Checkout</h1>
+                <p>Complete your purchase in a few easy steps.</p>
+            </div>
+        </section>
+
+        <section class="checkout-process-section">
+            <div class="container checkout-layout">
+                <div class="checkout-steps">
+                    <div class="step-indicator active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-title">Shipping</span>
+                    </div>
+                    <div class="step-indicator" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Payment</span>
+                    </div>
+                    <div class="step-indicator" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Review & Place Order</span>
+                    </div>
+                </div>
+
+                <form id="checkoutForm" class="checkout-form">
+                    <div class="form-step active" id="step1">
+                        <h2>Shipping Information</h2>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="e.g., 98XXXXXXXX" maxlength="10" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State/Province</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">Zip/Postal Code</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select Country</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="USA">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                </select>
+                        </div>
+                        <button type="button" class="btn-primary next-step" data-step="2">Next: Payment</button>
+                    </div>
+
+                    <div class="form-step" id="step2">
+                        <h2>Payment Information</h2>
+                        <div class="payment-options">
+                            <div class="radio-option">
+                                <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                                <label for="creditCard"><i class="fas fa-credit-card"></i> Credit Card</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                <label for="paypal"><i class="fab fa-paypal"></i> PayPal</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="esewa" name="paymentMethod" value="esewa">
+                                <label for="esewa">eSewa (Nepal)</label>
+                            </div>
+                             <div class="radio-option">
+                                <input type="radio" id="fonepay" name="paymentMethod" value="fonepay">
+                                <label for="fonepay">FonePay (Nepal)</label>
+                            </div>
+                        </div>
+
+                        <div id="creditCardDetails" class="payment-details">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+                            </div>
+                            <div class="form-group">
+                                <label for="cardName">Name on Card</label>
+                                <input type="text" id="cardName" name="cardName">
+                            </div>
+                            <div class="form-group split-50">
+                                <label for="expiryDate">Expiry Date</label>
+                                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group split-50">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="XXX" maxlength="4">
+                            </div>
+                        </div>
+
+                        <div id="paypalDetails" class="payment-details" style="display: none;">
+                            <div class="form-group">
+                                <label for="paypalEmail">PayPal Email</label>
+                                <input type="email" id="paypalEmail" name="paypalEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="paypalPassword">PayPal Password</label>
+                                <input type="password" id="paypalPassword" name="paypalPassword">
+                            </div>
+                            <p>You will be securely redirected to PayPal for authentication.</p>
+                        </div>
+
+                        <div id="esewaDetails" class="payment-details" style="display: none;">
+                            <div class="form-group">
+                                <label for="esewaPhone">eSewa Phone Number</label>
+                                <input type="tel" id="esewaPhone" name="esewaPhone" placeholder="98XXXXXXXX" maxlength="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="esewaPassword">eSewa Password</label>
+                                <input type="password" id="esewaPassword" name="esewaPassword">
+                            </div>
+                            <p>You will be redirected to eSewa to complete your payment.</p>
+                        </div>
+
+                         <div id="fonepayDetails" class="payment-details" style="display: none;">
+                            <div class="form-group">
+                                <label for="fonepayPhone">FonePay Phone Number</label>
+                                <input type="tel" id="fonepayPhone" name="fonepayPhone" placeholder="98XXXXXXXX" maxlength="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="fonepayPassword">FonePay Password</label>
+                                <input type="password" id="fonepayPassword" name="fonepayPassword">
+                            </div>
+                            <p>You will be redirected to FonePay to complete your payment.</p>
+                        </div>
+
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-primary prev-step" data-step="1">Previous: Shipping</button>
+                            <button type="button" class="btn-primary next-step" data-step="3">Next: Review Order</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step3">
+                        <h2>Review Your Order</h2>
+                        <div class="order-review">
+                            <h4>Shipping Address</h4>
+                            <p id="reviewShippingAddress"></p>
+
+                            <h4>Payment Method</h4>
+                            <p id="reviewPaymentMethod"></p>
+
+                            <h4>Items:</h4>
+                            <div id="reviewCartItems" class="review-cart-items">
+                                </div>
+                        </div>
+                        <div class="order-summary-review">
+                            <p>Subtotal: <span id="reviewSubtotal">$0.00</span></p>
+                            <p>Shipping: <span id="reviewShipping">$0.00</span></p>
+                            <p>Tax (13%): <span id="reviewTax">$0.00</span></p>
+                            <hr>
+                            <p class="total">Total: <span id="reviewTotal">$0.00</span></p>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn-primary prev-step" data-step="2">Previous: Payment</button>
+                            <button type="submit" class="btn-primary place-order-btn">Place Order</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section footer-about">
+                <h3>Shoe Haven</h3>
+                <p>Subscribe to our YouTube channel to watch more videos on shoe care, styling tips, and new arrivals.</p>
+                <div class="social-icons-footer">
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section footer-office">
+                <h3>Office</h3>
+                <p>123 Shoe Lane<br>Fashion City, FC 123456<br>Styleland</p>
+                <p>shoeshaven@example.com</p>
+                <p>+00 - 1234567890</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-newsletter">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email id" aria-label="Email for Newsletter">
+                    <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+                </form>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="checkout.js"></script><script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Haven - Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Shoe Haven Logo" class="logo-image">
+                    Shoe Haven
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li id="loginBtnContainer"><a href="#" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li id="registerBtnContainer"><a href="#" id="registerBtn"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li id="profileBtnContainer" style="display:none;">
+                        <a href="#" id="profileBtn"><i class="fas fa-user-circle"></i></a>
+                        <div id="profileDropdown" class="profile-dropdown">
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-hero-section">
+            <div class="hero-image-container">
+                <img src="images/hero-section-blog.png" alt="Shoe Haven Blog" class="hero-image">
+            </div>
+            <div class="container hero-text-container">
+                <h1>Our Shoe Insights & Stories</h1>
+                <p>Stay updated with the latest trends, tips, and tales from the world of footwear.</p>
+            </div>
+        </section>
+
+        <section class="blog-content-section">
+            <div class="container blog-layout">
+                <div class="blog-posts-container">
+                    <article class="featured-post" id="evolution-post">
+                        <img src="images/evolution.png" alt="Featured Blog Post">
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 15, 2025</span>
+                            <span><i class="far fa-user"></i> By ShoeExpert</span>
+                            <span><i class="far fa-comment"></i> 15 Comments</span>
+                        </div>
+                        <h2>The Evolution of Running Shoes: From Tracks to Streets</h2>
+                        <p>Discover how running shoe technology has transformed over the decades, leading to the high-performance footwear we know today. We delve into the innovations that brought us cushioning, stability, and speed...</p>
+                        <a href="#" class="read-more" data-post="evolution">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <div class="latest-posts-grid">
+                        <article class="blog-post-card" id="sneaker-trends-post">
+                            <img src="images/sneaker trend.png" alt="Sneaker Trends">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar-alt"></i> May 10, 2025</span>
+                            </div>
+                            <h3>Top Sneaker Trends for Summer 2025</h3>
+                            <p>Get ready to step out in style! We break down the hottest sneaker trends that are dominating the fashion scene this summer...</p>
+                            <a href="#" class="read-more" data-post="sneaker-trends">Read More</a>
+                        </article>
+
+                        <article class="blog-post-card" id="boot-care-post">
+                            <img src="images/maintain leather boot.png" alt="Shoe Care Tips">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar-alt"></i> May 02, 2025</span>
+                            </div>
+                            <h3>Essential Tips for Maintaining Your Leather Boots</h3>
+                            <p>Extend the life of your beloved leather boots with these simple yet effective care tips. From cleaning to conditioning, we cover it all...</p>
+                            <a href="#" class="read-more" data-post="boot-care">Read More</a>
+                        </article>
+
+                        <article class="blog-post-card" id="sustainable-post">
+                            <img src="images/greener future.png" alt="Eco-Friendly Shoes">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar-alt"></i> April 28, 2025</span>
+                            </div>
+                            <h3>Sustainable Footwear: Walking Towards a Greener Future</h3>
+                            <p>Explore the rise of eco-friendly shoe brands and what makes their products sustainable, from recycled materials to ethical manufacturing...</p>
+                            <a href="#" class="read-more" data-post="sustainable">Read More</a>
+                        </article>
+
+                         <article class="blog-post-card" id="formal-guide-post">
+                            <img src="images/gentalman.png" alt="Formal Shoe Guide">
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar-alt"></i> April 20, 2025</span>
+                            </div>
+                            <h3>A Gentleman's Guide to Choosing Formal Shoes</h3>
+                            <p>From Oxfords to Loafers, understand the nuances of formal footwear and how to pick the perfect pair for any formal occasion...</p>
+                            <a href="#" class="read-more" data-post="formal-guide">Read More</a>
+                        </article>
+                    </div>
+
+                    <div class="pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">Next &raquo;</a>
+                    </div>
+                </div>
+
+                <aside class="blog-sidebar">
+                    <div class="sidebar-section search-bar">
+                        <input type="text" placeholder="Search blog...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+
+                    <div class="sidebar-section categories">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#" data-category="sneaker">Sneaker Culture (12)</a></li>
+                            <li><a href="#" data-category="care">Shoe Care (8)</a></li>
+                            <li><a href="#" data-category="trends">Footwear Trends (15)</a></li>
+                            <li><a href="#" data-category="brands">Brand Stories (7)</a></li>
+                            <li><a href="#" data-category="running">Running & Performance (10)</a></li>
+                            <li><a href="#" data-category="all">View All</a></li>
+                        </ul>
+                    </div>
+
+                   
+
+                    <div class="sidebar-section tags">
+                        <h3>Popular Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#" data-tag="sneakers">#sneakers</a>
+                            <a href="#" data-tag="boots">#boots</a>
+                            <a href="#" data-tag="style">#style</a>
+                            <a href="#" data-tag="comfort">#comfort</a>
+                            <a href="#" data-tag="sustainability">#sustainability</a>
+                            <a href="#" data-tag="running">#running</a>
+                            <a href="#" data-tag="fashion">#fashion</a>
+                            <a href="#" data-tag="DIY">#DIY</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Full Post Modal -->
+        <div id="postModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalPostContent"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <!-- Footer content remains the same -->
+        <footer class="main-footer">
+            <div class="container footer-content">
+                <div class="footer-section footer-about">
+                    <h3>Shoe Haven</h3>
+                    <p>Subscribe to our YouTube channel to watch more videos on shoe care, styling tips, and new arrivals.</p>
+                    <div class="social-icons-footer">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section footer-office">
+                    <h3>Office</h3>
+                    <p>123 Shoe Lane<br>Fashion City, FC 123456<br>Styleland</p>
+                    <p>shoeshaven@example.com</p>
+                    <p>+00 - 1234567890</p>
+                </div>
+                <div class="footer-section footer-links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email id" aria-label="Email for Newsletter">
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+    <script src="blog.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

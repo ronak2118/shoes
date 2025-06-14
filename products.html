@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Haven - Products</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Shoe Haven Logo" class="logo-image">
+                    Shoe Haven
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                    <li id="loginBtnContainer"><a href="#" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li id="registerBtnContainer"><a href="#" id="registerBtn"><i class="fas fa-user-plus"></i> Register</a></li>
+                    <li id="profileBtnContainer" style="display:none;">
+                        <a href="#" id="profileBtn"><i class="fas fa-user-circle"></i></a>
+                        <div id="profileDropdown" class="profile-dropdown">
+                            <a href="#" id="logoutBtn">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="products-hero-section">
+            <div class="hero-image-container">
+                <img src="images/hero-section-product.png" alt="Our Shoe Collection" class="hero-image">
+            </div>
+            <div class="container hero-text-container">
+                <h1>Our Diverse Shoe Collection</h1>
+                <p>Find the perfect pair for every step of your journey.</p>
+            </div>
+        </section>
+
+        <section class="products-listing-section">
+            <div class="container">
+                <div class="sidebar">
+                    <h3>Filter by Category</h3>
+                    <ul class="filter-categories">
+                        <li><a href="#" data-filter="all" class="active">All Shoes</a></li>
+                        <li><a href="#" data-filter="sneakers">Sneakers</a></li>
+                        <li><a href="#" data-filter="boots">Boots</a></li>
+                        <li><a href="#" data-filter="sandals">Sandals</a></li>
+                        <li><a href="#" data-filter="formals">Formals</a></li>
+                        <li><a href="#" data-filter="running">Running Shoes</a></li>
+                        <li><a href="#" data-filter="heels">Heels</a></li>
+                    </ul>
+
+                    <h3>Price Range</h3>
+                    <div class="price-range">
+                        <input type="range" min="20" max="500" value="500" class="slider" id="priceRange">
+                        <p>Price: $<span id="priceValue">500</span></p>
+                    </div>
+
+                    <h3>Customer Rating</h3>
+                    <div class="rating-filter">
+                        <input type="radio" id="5stars" name="rating" value="5" data-min-rating="4.8"><label for="5stars"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (4.8+)</label><br>
+                        <input type="radio" id="4stars" name="rating" value="4" data-min-rating="4.0"><label for="4stars"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (4.0+)</label><br>
+                        <input type="radio" id="3stars" name="rating" value="3" data-min-rating="3.0"><label for="3stars"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (3.0+)</label><br>
+                        <input type="radio" id="all-ratings" name="rating" value="0" data-min-rating="0" checked><label for="all-ratings"> All Ratings</label>
+                    </div>
+                </div>
+                <div class="product-grid" id="productGrid">
+                    <div class="product-item" data-category="sneakers" data-price="89.99" data-rating="4.5">
+                        <img src="images/Urban Stealth Sneaker.png" alt="Urban Stealth Sneaker">
+                        <div class="product-info">
+                            <h4>Urban Stealth Sneaker</h4>
+                            <p class="price">$89.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (128 reviews)</div>
+                            <p class="description">Lightweight and breathable, perfect for city adventures.</p>
+                            <button class="add-to-cart-btn" data-product-id="1" data-name="Urban Stealth Sneaker" data-price="89.99" data-image="images/sneakers/sneaker-1.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="75.99" data-rating="4.4">
+                        <img src="images/Classic White Trainer.png" alt="Classic White Trainer">
+                        <div class="product-info">
+                            <h4>Classic White Trainer</h4>
+                            <p class="price">$75.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (178 reviews)</div>
+                            <p class="description">Timeless design, unparalleled comfort for daily wear.</p>
+                            <button class="add-to-cart-btn" data-product-id="2" data-name="Classic White Trainer" data-price="75.99" data-image="images/sneakers/sneaker-2.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="95.99" data-rating="4.7">
+                        <img src="images/Tech-knit Runner.png" alt="Tech-knit Runner">
+                        <div class="product-info">
+                            <h4>Tech-knit Runner</h4>
+                            <p class="price">$95.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (210 reviews)</div>
+                            <p class="description">Advanced knit material for a snug fit and superior ventilation.</p>
+                            <button class="add-to-cart-btn" data-product-id="3" data-name="Tech-knit Runner" data-price="95.99" data-image="images/sneakers/sneaker-3.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="110.99" data-rating="4.8">
+                        <img src="images/Infinity Boost Sneaker.png" alt="Infinity Boost Sneaker">
+                        <div class="product-info">
+                            <h4>Infinity Boost Sneaker</h4>
+                            <p class="price">$110.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (195 reviews)</div>
+                            <p class="description">Revolutionary cushioning for an energized stride.</p>
+                            <button class="add-to-cart-btn" data-product-id="4" data-name="Infinity Boost Sneaker" data-price="110.99" data-image="images/sneakers/sneaker-4.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="65.99" data-rating="4.2">
+                        <img src="images/Retro Skate Shoe.png" alt="Retro Skate Shoe">
+                        <div class="product-info">
+                            <h4>Retro Skate Shoe</h4>
+                            <p class="price">$65.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (145 reviews)</div>
+                            <p class="description">Vintage vibe with modern durability for skate park or street.</p>
+                            <button class="add-to-cart-btn" data-product-id="5" data-name="Retro Skate Shoe" data-price="65.99" data-image="images/sneakers/sneaker-5.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="120.99" data-rating="4.9">
+                        <img src="images/Luxury Street Sneaker.png" alt="Luxury Street Sneaker">
+                        <div class="product-info">
+                            <h4>Luxury Street Sneaker</h4>
+                            <p class="price">$120.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (230 reviews)</div>
+                            <p class="description">Premium materials and exquisite design for the fashion-forward.</p>
+                            <button class="add-to-cart-btn" data-product-id="6" data-name="Luxury Street Sneaker" data-price="120.99" data-image="images/sneakers/sneaker-6.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="85.99" data-rating="4.3">
+                        <img src="images/Minimalist Everyday.png" alt="Minimalist Everyday">
+                        <div class="product-info">
+                            <h4>Minimalist Everyday</h4>
+                            <p class="price">$85.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (167 reviews)</div>
+                            <p class="description">Clean lines and comfortable fit for effortless daily style.</p>
+                            <button class="add-to-cart-btn" data-product-id="7" data-name="Minimalist Everyday" data-price="85.99" data-image="images/sneakers/sneaker-7.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="135.99" data-rating="4.7">
+                        <img src="images/High-Top Urban.png" alt="High-Top Urban">
+                        <div class="product-info">
+                            <h4>High-Top Urban</h4>
+                            <p class="price">$135.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (245 reviews)</div>
+                            <p class="description">Statement high-top design, offering ankle support and urban flair.</p>
+                            <button class="add-to-cart-btn" data-product-id="8" data-name="High-Top Urban" data-price="135.99" data-image="images/sneakers/sneaker-8.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="70.99" data-rating="4.1">
+                        <img src="images/Canvas Classic.png" alt="Canvas Classic">
+                        <div class="product-info">
+                            <h4>Canvas Classic</h4>
+                            <p class="price">$70.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (132 reviews)</div>
+                            <p class="description">Lightweight canvas, perfect for summer days and casual comfort.</p>
+                            <button class="add-to-cart-btn" data-product-id="9" data-name="Canvas Classic" data-price="70.99" data-image="images/sneakers/sneaker-9.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sneakers" data-price="125.99" data-rating="4.6">
+                        <img src="images/Athletic Performance.png" alt="Athletic Performance">
+                        <div class="product-info">
+                            <h4>Athletic Performance</h4>
+                            <p class="price">$125.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (187 reviews)</div>
+                            <p class="description">Engineered for training, offering stability and shock absorption.</p>
+                            <button class="add-to-cart-btn" data-product-id="10" data-name="Athletic Performance" data-price="125.99" data-image="images/sneakers/sneaker-10.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-category="boots" data-price="129.99" data-rating="4.7">
+                        <img src="images/Rugged Leather Boot.png" alt="Rugged Leather Boot">
+                        <div class="product-info">
+                            <h4>Rugged Leather Boot</h4>
+                            <p class="price">$129.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (215 reviews)</div>
+                            <p class="description">Durable and water-resistant, ideal for outdoor adventures.</p>
+                            <button class="add-to-cart-btn" data-product-id="11" data-name="Rugged Leather Boot" data-price="129.99" data-image="images/boots/boot-1.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="139.99" data-rating="4.9">
+                        <img src="images/Insulated Winter Boo.png" alt="Insulated Winter Boot">
+                        <div class="product-info">
+                            <h4>Insulated Winter Boot</h4>
+                            <p class="price">$139.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (267 reviews)</div>
+                            <p class="description">Keeps feet warm and dry in extreme cold conditions.</p>
+                            <button class="add-to-cart-btn" data-product-id="12" data-name="Insulated Winter Boot" data-price="139.99" data-image="images/boots/boot-2.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="149.99" data-rating="4.8">
+                        <img src="images/premium boot.png" alt="Premium Work Boot">
+                        <div class="product-info">
+                            <h4>Premium Work Boot</h4>
+                            <p class="price">$149.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (289 reviews)</div>
+                            <p class="description">Built for toughness and comfort, with steel toe option.</p>
+                            <button class="add-to-cart-btn" data-product-id="13" data-name="Premium Work Boot" data-price="149.99" data-image="images/boots/boot-3.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="119.99" data-rating="4.5">
+                        <img src="images/Urban Chelsea Boot.png" alt="Urban Chelsea Boot">
+                        <div class="product-info">
+                            <h4>Urban Chelsea Boot</h4>
+                            <p class="price">$119.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (170 reviews)</div>
+                            <p class="description">Sleek design, easy slip-on for modern urban style.</p>
+                            <button class="add-to-cart-btn" data-product-id="14" data-name="Urban Chelsea Boot" data-price="119.99" data-image="images/boots/boot-4.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="159.99" data-rating="4.9">
+                        <img src="images/Expedition Trekker.png" alt="Expedition Trekker">
+                        <div class="product-info">
+                            <h4>Expedition Trekker</h4>
+                            <p class="price">$159.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (295 reviews)</div>
+                            <p class="description">High-performance boot for challenging terrains.</p>
+                            <button class="add-to-cart-btn" data-product-id="15" data-name="Expedition Trekker" data-price="159.99" data-image="images/boots/boot-5.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="99.99" data-rating="4.2">
+                        <img src="images/Casual Desert Boot.png" alt="Casual Desert Boot">
+                        <div class="product-info">
+                            <h4>Casual Desert Boot</h4>
+                            <p class="price">$99.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (140 reviews)</div>
+                            <p class="description">Lightweight and comfortable for everyday casual wear.</p>
+                            <button class="add-to-cart-btn" data-product-id="16" data-name="Casual Desert Boot" data-price="99.99" data-image="images/boots/boot-6.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="169.99" data-rating="4.9">
+                        <img src="images/Motorcycle Rider Boot.png" alt="Motorcycle Rider Boot">
+                        <div class="product-info">
+                            <h4>Motorcycle Rider Boot</h4>
+                            <p class="price">$169.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (300 reviews)</div>
+                            <p class="description">Robust construction for protection and style on the road.</p>
+                            <button class="add-to-cart-btn" data-product-id="17" data-name="Motorcycle Rider Boot" data-price="169.99" data-image="images/boots/boot-7.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="115.99" data-rating="4.6">
+                        <img src="images/Classic Ankle Boo.png" alt="Classic Ankle Boot">
+                        <div class="product-info">
+                            <h4>Classic Ankle Boot</h4>
+                            <p class="price">$115.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (180 reviews)</div>
+                            <p class="description">Versatile and stylish for both casual and semi-formal looks.</p>
+                            <button class="add-to-cart-btn" data-product-id="18" data-name="Classic Ankle Boot" data-price="115.99" data-image="images/boots/boot-8.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="105.99" data-rating="4.4">
+                        <img src="images/Fashion Combat Boot.png" alt="Fashion Combat Boot">
+                        <div class="product-info">
+                            <h4>Fashion Combat Boot</h4>
+                            <p class="price">$105.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (155 reviews)</div>
+                            <p class="description">Edgy style meets everyday comfort, with sturdy sole.</p>
+                            <button class="add-to-cart-btn" data-product-id="19" data-name="Fashion Combat Boot" data-price="105.99" data-image="images/boots/boot-9.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="boots" data-price="179.99" data-rating="4.9">
+                        <img src="images/Premium Cowboy Boot.png" alt="Premium Cowboy Boot">
+                        <div class="product-info">
+                            <h4>Premium Cowboy Boot</h4>
+                            <p class="price">$179.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (275 reviews)</div>
+                            <p class="description">Handcrafted with genuine leather for authentic western style.</p>
+                            <button class="add-to-cart-btn" data-product-id="20" data-name="Premium Cowboy Boot" data-price="179.99" data-image="images/boots/boot-10.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-category="sandals" data-price="49.99" data-rating="4.2">
+                        <img src="images/Summer Comfort Sandal.png" alt="Summer Comfort Sandal">
+                        <div class="product-info">
+                            <h4>Summer Comfort Sandal</h4>
+                            <p class="price">$49.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (87 reviews)</div>
+                            <p class="description">Lightweight and breathable, ideal for beach and casual walks.</p>
+                            <button class="add-to-cart-btn" data-product-id="21" data-name="Summer Comfort Sandal" data-price="49.99" data-image="images/sandals/sandal-1.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="59.99" data-rating="4.5">
+                        <img src="images/Sport Performance Sandal.png" alt="Sport Performance Sandal">
+                        <div class="product-info">
+                            <h4>Sport Performance Sandal</h4>
+                            <p class="price">$59.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (112 reviews)</div>
+                            <p class="description">Adjustable straps and cushioned footbed for active use.</p>
+                            <button class="add-to-cart-btn" data-product-id="22" data-name="Sport Performance Sandal" data-price="59.99" data-image="images/sandals/sandal-2.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="39.99" data-rating="4.0">
+                        <img src="images/Beach Flip Flop.png" alt="Beach Flip Flop">
+                        <div class="product-info">
+                            <h4>Beach Flip Flop</h4>
+                            <p class="price">$39.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (105 reviews)</div>
+                            <p class="description">Essential for summer, quick-drying and comfortable.</p>
+                            <button class="add-to-cart-btn" data-product-id="23" data-name="Beach Flip Flop" data-price="39.99" data-image="images/sandals/sandal-3.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="65.99" data-rating="4.6">
+                        <img src="images/Leather Fisherman Sandal.png" alt="Leather Fisherman Sandal">
+                        <div class="product-info">
+                            <h4>Leather Fisherman Sandal</h4>
+                            <p class="price">$65.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (98 reviews)</div>
+                            <p class="description">Classic design with premium leather for durability and style.</p>
+                            <button class="add-to-cart-btn" data-product-id="24" data-name="Leather Fisherman Sandal" data-price="65.99" data-image="images/sandals/sandal-4.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="54.99" data-rating="4.3">
+                        <img src="images/Platform Wedge Sandal.png" alt="Platform Wedge Sandal">
+                        <div class="product-info">
+                            <h4>Platform Wedge Sandal</h4>
+                            <p class="price">$54.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (75 reviews)</div>
+                            <p class="description">Elevate your style with comfortable height and chic design.</p>
+                            <button class="add-to-cart-btn" data-product-id="25" data-name="Platform Wedge Sandal" data-price="54.99" data-image="images/sandals/sandal-5.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="45.99" data-rating="4.1">
+                        <img src="images/Casual Slide Sandal.png" alt="Casual Slide Sandal">
+                        <div class="product-info">
+                            <h4>Casual Slide Sandal</h4>
+                            <p class="price">$45.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (90 reviews)</div>
+                            <p class="description">Effortless comfort for lounging or quick errands.</p>
+                            <button class="add-to-cart-btn" data-product-id="26" data-name="Casual Slide Sandal" data-price="45.99" data-image="images/sandals/sandal-6.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="70.99" data-rating="4.7">
+                        <img src="images/Adventure River Sandal.png" alt="Adventure River Sandal">
+                        <div class="product-info">
+                            <h4>Adventure River Sandal</h4>
+                            <p class="price">$70.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (120 reviews)</div>
+                            <p class="description">Water-friendly and grippy, perfect for outdoor activities.</p>
+                            <button class="add-to-cart-btn" data-product-id="27" data-name="Adventure River Sandal" data-price="70.99" data-image="images/sandals/sandal-7.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="52.99" data-rating="4.4">
+                        <img src="images/Cork Footbed Sandal.png" alt="Cork Footbed Sandal">
+                        <div class="product-info">
+                            <h4>Cork Footbed Sandal</h4>
+                            <p class="price">$52.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (80 reviews)</div>
+                            <p class="description">Contoured cork footbed for personalized comfort.</p>
+                            <button class="add-to-cart-btn" data-product-id="28" data-name="Cork Footbed Sandal" data-price="52.99" data-image="images/sandals/sandal-8.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="69.99" data-rating="4.8">
+                        <img src="images/Glamour Strappy Sandal.png" alt="Glamour Strappy Sandal">
+                        <div class="product-info">
+                            <h4>Glamour Strappy Sandal</h4>
+                            <p class="price">$69.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (115 reviews)</div>
+                            <p class="description">Elegant and chic, perfect for evening wear or special occasions.</p>
+                            <button class="add-to-cart-btn" data-product-id="29" data-name="Glamour Strappy Sandal" data-price="69.99" data-image="images/sandals/sandal-9.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="sandals" data-price="42.99" data-rating="3.9">
+                        <img src="images/Lightweight EVA Sandal.png" alt="Lightweight EVA Sandal">
+                        <div class="product-info">
+                            <h4>Lightweight EVA Sandal</h4>
+                            <p class="price">$42.99</p>
+                            <div class="reviews"><span class="stars">★★★☆☆</span> (65 reviews)</div>
+                            <p class="description">Extremely light and comfortable for casual wear around the house or pool.</p>
+                            <button class="add-to-cart-btn" data-product-id="30" data-name="Lightweight EVA Sandal" data-price="42.99" data-image="images/sandals/sandal-10.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-category="formals" data-price="109.99" data-rating="4.8">
+                        <img src="images/Classic Oxford Dress Shoe.png" alt="Classic Oxford Dress Shoe">
+                        <div class="product-info">
+                            <h4>Classic Oxford Dress Shoe</h4>
+                            <p class="price">$109.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (192 reviews)</div>
+                            <p class="description">Timeless elegance, perfect for formal events and business attire.</p>
+                            <button class="add-to-cart-btn" data-product-id="31" data-name="Classic Oxford Dress Shoe" data-price="109.99" data-image="images/formals/formal-1.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="119.99" data-rating="4.9">
+                        <img src="images/addidas shoes.png" alt="Derby Leather Shoe">
+                        <div class="product-info">
+                            <h4>addidas shoes</h4>
+                            <p class="price">$119.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (210 reviews)</div>
+                            <p class="description">Versatile and comfortable, suitable for both formal and smart-casual.</p>
+                            <button class="add-to-cart-btn" data-product-id="32" data-name="Derby Leather Shoe" data-price="119.99" data-image="images/formals/formal-2.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="99.99" data-rating="4.6">
+                        <img src="images/Suede Loafer.png" alt="Suede Loafer">
+                        <div class="product-info">
+                            <h4>Suede Loafer</h4>
+                            <p class="price">$99.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (175 reviews)</div>
+                            <p class="description">Luxurious suede with a comfortable slip-on design for a refined look.</p>
+                            <button class="add-to-cart-btn" data-product-id="33" data-name="Suede Loafer" data-price="99.99" data-image="images/formals/formal-3.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="139.99" data-rating="4.7">
+                        <img src="images/Patent Leather Brogue.png" alt="Patent Leather Brogue">
+                        <div class="product-info">
+                            <h4>Patent Leather Brogue</h4>
+                            <p class="price">$139.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (188 reviews)</div>
+                            <p class="description">High-shine finish with intricate brogue detailing for a standout formal shoe.</p>
+                            <button class="add-to-cart-btn" data-product-id="34" data-name="Patent Leather Brogue" data-price="139.99" data-image="images/formals/formal-4.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="89.99" data-rating="4.4">
+                        <img src="images/Moc-Toe Casual Formal.png" alt="Moc-Toe Casual Formal">
+                        <div class="product-info">
+                            <h4>Moc-Toe Casual Formal</h4>
+                            <p class="price">$89.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (160 reviews)</div>
+                            <p class="description">A comfortable blend of formal and casual, perfect for smart-casual events.</p>
+                            <button class="add-to-cart-btn" data-product-id="35" data-name="Moc-Toe Casual Formal" data-price="89.99" data-image="images/formals/formal-5.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="129.99" data-rating="4.8">
+                        <img src="images/Monk Strap Dress Shoe.png" alt="Monk Strap Dress Shoe">
+                        <div class="product-info">
+                            <h4>Monk Strap Dress Shoe</h4>
+                            <p class="price">$129.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (205 reviews)</div>
+                            <p class="description">Distinctive single or double buckle design for a sophisticated statement.</p>
+                            <button class="add-to-cart-btn" data-product-id="36" data-name="Monk Strap Dress Shoe" data-price="129.99" data-image="images/formals/formal-6.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="105.99" data-rating="4.5">
+                        <img src="images/Wingtip Formal Shoe.png" alt="Wingtip Formal Shoe">
+                        <div class="product-info">
+                            <h4>Wingtip Formal Shoe</h4>
+                            <p class="price">$105.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (190 reviews)</div>
+                            <p class="description">Classic perforated design, adding character to your formal ensemble.</p>
+                            <button class="add-to-cart-btn" data-product-id="37" data-name="Wingtip Formal Shoe" data-price="105.99" data-image="images/formals/formal-7.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="149.99" data-rating="4.9">
+                        <img src="images/Luxury Cap-Toe Oxford.png" alt="Luxury Cap-Toe Oxford">
+                        <div class="product-info">
+                            <h4>Luxury Cap-Toe Oxford</h4>
+                            <p class="price">$149.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (220 reviews)</div>
+                            <p class="description">Exquisite craftsmanship and premium leather for the ultimate formal look.</p>
+                            <button class="add-to-cart-btn" data-product-id="38" data-name="Luxury Cap-Toe Oxford" data-price="149.99" data-image="images/formals/formal-8.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="95.99" data-rating="4.3">
+                        <img src="images/Slip-On Dress Loafer.png" alt="Slip-On Dress Loafer">
+                        <div class="product-info">
+                            <h4>Slip-On Dress Loafer</h4>
+                            <p class="price">$95.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (150 reviews)</div>
+                            <p class="description">Convenient slip-on style with a refined dress shoe aesthetic.</p>
+                            <button class="add-to-cart-btn" data-product-id="39" data-name="Slip-On Dress Loafer" data-price="95.99" data-image="images/formals/formal-9.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="formals" data-price="115.99" data-rating="4.6">
+                        <img src="images/Brogue Boot.png" alt="Brogue Boot">
+                        <div class="product-info">
+                            <h4>Brogue Boot</h4>
+                            <p class="price">$115.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (165 reviews)</div>
+                            <p class="description">A sophisticated blend of a formal shoe and a durable boot.</p>
+                            <button class="add-to-cart-btn" data-product-id="40" data-name="Brogue Boot" data-price="115.99" data-image="images/formals/formal-10.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-category="running" data-price="99.99" data-rating="4.6">
+                        <img src="images/Ultralight Racer.png" alt="Ultralight Racer">
+                        <div class="product-info">
+                            <h4>Ultralight Racer</h4>
+                            <p class="price">$99.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (245 reviews)</div>
+                            <p class="description">Engineered for speed, minimal weight with maximum energy return.</p>
+                            <button class="add-to-cart-btn" data-product-id="41" data-name="Ultralight Racer" data-price="99.99" data-image="images/running/running-1.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="109.99" data-rating="4.7">
+                        <img src="images/Cushion Max Runner.png" alt="Cushion Max Runner">
+                        <div class="product-info">
+                            <h4>Cushion Max Runner</h4>
+                            <p class="price">$109.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (260 reviews)</div>
+                            <p class="description">Plush cushioning for ultimate comfort on long runs.</p>
+                            <button class="add-to-cart-btn" data-product-id="42" data-name="Cushion Max Runner" data-price="109.99" data-image="images/running/running-2.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="89.99" data-rating="4.5">
+                        <img src="images/Trail Blaster.png" alt="Trail Blaster">
+                        <div class="product-info">
+                            <h4>Trail Blaster</h4>
+                            <p class="price">$89.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (190 reviews)</div>
+                            <p class="description">Aggressive grip and protection for off-road running.</p>
+                            <button class="add-to-cart-btn" data-product-id="43" data-name="Trail Blaster" data-price="89.99" data-image="images/running/running-3.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="115.99" data-rating="4.8">
+                        <img src="images/Stability Pro.png" alt="Stability Pro">
+                        <div class="product-info">
+                            <h4>Stability Pro</h4>
+                            <p class="price">$115.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (225 reviews)</div>
+                            <p class="description">Enhanced support and motion control for overpronators.</p>
+                            <button class="add-to-cart-btn" data-product-id="44" data-name="Stability Pro" data-price="115.99" data-image="images/running/running-4.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="79.99" data-rating="4.2">
+                        <img src="images/Everyday Jogger.png" alt="Everyday Jogger">
+                        <div class="product-info">
+                            <h4>Everyday Jogger</h4>
+                            <p class="price">$79.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (160 reviews)</div>
+                            <p class="description">Reliable comfort and responsiveness for daily runs.</p>
+                            <button class="add-to-cart-btn" data-product-id="45" data-name="Everyday Jogger" data-price="79.99" data-image="images/running/running-5.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="125.99" data-rating="4.9">
+                        <img src="images/Carbon Fiber Speedster.png" alt="Carbon Fiber Speedster">
+                        <div class="product-info">
+                            <h4>Carbon Fiber Speedster</h4>
+                            <p class="price">$125.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (280 reviews)</div>
+                            <p class="description">Infused with carbon plate for explosive propulsion and speed.</p>
+                            <button class="add-to-cart-btn" data-product-id="46" data-name="Carbon Fiber Speedster" data-price="125.99" data-image="images/running/running-6.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="94.99" data-rating="4.3">
+                        <img src="images/Lightweight Marathon.png" alt="Lightweight Marathon">
+                        <div class="product-info">
+                            <h4>Lightweight Marathon</h4>
+                            <p class="price">$94.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (200 reviews)</div>
+                            <p class="description">Designed for long distances, offering comfort without bulk.</p>
+                            <button class="add-to-cart-btn" data-product-id="47" data-name="Lightweight Marathon" data-price="94.99" data-image="images/running/running-7.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="104.99" data-rating="4.7">
+                        <img src="images/Breathable Racer.png" alt="Breathable Racer">
+                        <div class="product-info">
+                            <h4>Breathable Racer</h4>
+                            <p class="price">$104.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (215 reviews)</div>
+                            <p class="description">Highly ventilated upper for cool and dry feet during intense runs.</p>
+                            <button class="add-to-cart-btn" data-product-id="48" data-name="Breathable Racer" data-price="104.99" data-image="images/running/running-8.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="130.99" data-rating="4.8">
+                        <img src="images/All-Terrain Runner.png" alt="All-Terrain Runner">
+                        <div class="product-info">
+                            <h4>All-Terrain Runner</h4>
+                            <p class="price">$130.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (230 reviews)</div>
+                            <p class="description">Versatile shoe for road and light trails, with hybrid grip.</p>
+                            <button class="add-to-cart-btn" data-product-id="49" data-name="All-Terrain Runner" data-price="130.99" data-image="images/running/running-9.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="running" data-price="85.99" data-rating="4.1">
+                        <img src="images/Beginner's Comfort.png" alt="Beginner's Comfort">
+                        <div class="product-info">
+                            <h4>Beginner's Comfort</h4>
+                            <p class="price">$85.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (150 reviews)</div>
+                            <p class="description">Excellent choice for new runners, offering balanced cushioning.</p>
+                            <button class="add-to-cart-btn" data-product-id="50" data-name="Beginner's Comfort" data-price="85.99" data-image="images/running/running-10.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-item" data-category="heels" data-price="79.99" data-rating="4.3">
+                        <img src="images/Classic Stiletto Heel.png" alt="Classic Stiletto Heel">
+                        <div class="product-info">
+                            <h4>Classic Stiletto Heel</h4>
+                            <p class="price">$79.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (156 reviews)</div>
+                            <p class="description">Elegant and timeless, perfect for sophisticated evening wear.</p>
+                            <button class="add-to-cart-btn" data-product-id="51" data-name="Classic Stiletto Heel" data-price="79.99" data-image="images/heels/heels-1.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="89.99" data-rating="4.5">
+                        <img src="images/Block Heel Pump.png" alt="Block Heel Pump">
+                        <div class="product-info">
+                            <h4>Block Heel Pump</h4>
+                            <p class="price">$89.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (170 reviews)</div>
+                            <p class="description">Offers more stability and comfort with a stylish block heel.</p>
+                            <button class="add-to-cart-btn" data-product-id="52" data-name="Block Heel Pump" data-price="89.99" data-image="images/heels/heels-2.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="69.99" data-rating="4.1">
+                        <img src="images/Low Kitten Heel.png" alt="Low Kitten Heel">
+                        <div class="product-info">
+                            <h4>Low Kitten Heel</h4>
+                            <p class="price">$69.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (120 reviews)</div>
+                            <p class="description">Subtle lift and elegant look, great for day-to-night transitions.</p>
+                            <button class="add-to-cart-btn" data-product-id="53" data-name="Low Kitten Heel" data-price="69.99" data-image="images/heels/heels-3.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="95.99" data-rating="4.6">
+                        <img src="images/Platform Party Heel.png" alt="Platform Party Heel">
+                        <div class="product-info">
+                            <h4>Platform Party Heel</h4>
+                            <p class="price">$95.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (185 reviews)</div>
+                            <p class="description">Make a statement with added height and dazzling appeal.</p>
+                            <button class="add-to-cart-btn" data-product-id="54" data-name="Platform Party Heel" data-price="95.99" data-image="images/heels/heels-4.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="84.99" data-rating="4.4">
+                        <img src="images/Open-Toe Sandal Heel.png" alt="Open-Toe Sandal Heel">
+                        <div class="product-info">
+                            <h4>Open-Toe Sandal Heel</h4>
+                            <p class="price">$84.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (140 reviews)</div>
+                            <p class="description">Perfect for warmer weather, combining comfort and sophistication.</p>
+                            <button class="add-to-cart-btn" data-product-id="55" data-name="Open-Toe Sandal Heel" data-price="84.99" data-image="images/heels/heels-5.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="105.99" data-rating="4.7">
+                        <img src="images/Ankle Strap Glamour.png" alt="Ankle Strap Glamour">
+                        <div class="product-info">
+                            <h4>Ankle Strap Glamour</h4>
+                            <p class="price">$105.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (195 reviews)</div>
+                            <p class="description">Secure and stylish, adding a touch of allure to your outfit.</p>
+                            <button class="add-to-cart-btn" data-product-id="56" data-name="Ankle Strap Glamour" data-price="105.99" data-image="images/heels/heels-6.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="75.99" data-rating="4.2">
+                        <img src="images/Comfort Wedge Heel.png" alt="Comfort Wedge Heel">
+                        <div class="product-info">
+                            <h4>Comfort Wedge Heel</h4>
+                            <p class="price">$75.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (130 reviews)</div>
+                            <p class="description">Experience height without sacrificing comfort, ideal for all-day wear.</p>
+                            <button class="add-to-cart-btn" data-product-id="57" data-name="Comfort Wedge Heel" data-price="75.99" data-image="images/heels/heels-7.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="99.99" data-rating="4.8">
+                        <img src="images/Pointed Toe Pump.png" alt="Pointed Toe Pump">
+                        <div class="product-info">
+                            <h4>Pointed Toe Pump</h4>
+                            <p class="price">$99.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (200 reviews)</div>
+                            <p class="description">Sleek and sophisticated, a staple for any professional or evening look.</p>
+                            <button class="add-to-cart-btn" data-product-id="58" data-name="Pointed Toe Pump" data-price="99.99" data-image="images/heels/heels-8.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="110.99" data-rating="4.9">
+                        <img src="images/Embellished Party Heel.png" alt="Embellished Party Heel">
+                        <div class="product-info">
+                            <h4>Embellished Party Heel</h4>
+                            <p class="price">$110.99</p>
+                            <div class="reviews"><span class="stars">★★★★★</span> (210 reviews)</div>
+                            <p class="description">Dazzling embellishments for show-stopping entrance at any event.</p>
+                            <button class="add-to-cart-btn" data-product-id="59" data-name="Embellished Party Heel" data-price="110.99" data-image="images/heels/heels-9.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="heels" data-price="64.99" data-rating="4.0">
+                        <img src="images/Everyday Mid-Heel.png" alt="Everyday Mid-Heel">
+                        <div class="product-info">
+                            <h4>Everyday Mid-Heel</h4>
+                            <p class="price">$64.99</p>
+                            <div class="reviews"><span class="stars">★★★★☆</span> (110 reviews)</div>
+                            <p class="description">Comfortable and stylish, perfect for daily wear with a subtle lift.</p>
+                            <button class="add-to-cart-btn" data-product-id="60" data-name="Everyday Mid-Heel" data-price="64.99" data-image="images/heels/heels-10.jpg">Add to Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section footer-about">
+                <h3>Shoe Haven</h3>
+                <p>Subscribe to our YouTube channel to watch more videos on shoe care, styling tips, and new arrivals.</p>
+                <div class="social-icons-footer">
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section footer-office">
+                <h3>Office</h3>
+                <p>123 Shoe Lane<br>Fashion City, FC 123456<br>Styleland</p>
+                <p>shoeshaven@example.com</p>
+                <p>+00 - 1234567890</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-newsletter">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email id" aria-label="Email for Newsletter">
+                    <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+                </form>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script> <script src="auth.js"></script>
+</body>
+</html>

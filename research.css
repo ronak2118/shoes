@@ -1,0 +1,721 @@
+/* General Styling - Reusing from previous CSS files for consistency */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --accent-color: #ffc107;
+    --dark-text: #343a40;
+    --light-text: #f8f9fa;
+    --background-light: #ffffff;
+    --background-dark: #212529;
+    --border-color: #dee2e6;
+
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #f8f9fa; /* Light background for research page */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    color: var(--dark-text);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Header Styling - Reusing */
+.main-header {
+    background-color: var(--background-light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-primary);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 1.05em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.main-nav ul li a.active,
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+}
+
+.header-actions .order-now-btn {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-actions .order-now-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Research Hero Section */
+.research-hero-section {
+    color: var(--light-text);
+    text-align: center;
+    padding: 200px 0;
+    position: relative;
+    margin-bottom: 50px;
+    overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.research-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay */
+    z-index: 2;
+}
+
+.research-hero-section .container {
+    position: relative;
+    z-index: 3; /* Ensure content is above overlay and image */
+}
+
+/* Rest of your existing hero section CSS remains the same */
+.research-hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: var(--light-text);
+}
+
+.research-hero-section p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Intro to Research Section */
+.intro-to-research-section {
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.intro-to-research-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: var(--dark-text);
+}
+
+/* Research Areas Section */
+.research-areas-section {
+    padding: 60px 0;
+    background-color: #e9ecef; /* Light gray background */
+    margin-bottom: 50px;
+}
+
+.research-areas-section .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.research-area-card {
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-area-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.research-area-card .icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.research-area-card .icon-container i {
+    font-size: 2.5em;
+    color: var(--light-text);
+}
+
+.research-area-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.research-area-card p {
+    font-size: 1em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.research-area-card img {
+    max-width: 100%;
+    height: 180px; /* Standardized height */
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Our Process Section */
+.our-process-section {
+    padding: 60px 0;
+    margin-bottom: 50px;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.step {
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    position: relative;
+    padding-top: 60px; /* Space for the step number */
+}
+
+.step-number {
+    position: absolute;
+    top: -25px; /* Adjust to position outside the card */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--background-light); /* To create a ring effect */
+}
+
+.step h3 {
+    font-size: 1.5em;
+    margin-top: 15px; /* Space after step number */
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+.step p {
+    font-size: 1em;
+    color: var(--secondary-color);
+}
+
+/* Future Vision Section */
+.future-vision-section {
+    background: linear-gradient(to right, var(--primary-color), #0056b3);
+    color: var(--light-text);
+    text-align: center;
+    padding: 80px 0;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+.future-vision-section h2 {
+    color: var(--light-text);
+    margin-bottom: 25px;
+}
+
+.future-vision-section h2::after {
+    background-color: var(--light-text);
+}
+
+.future-vision-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.future-vision-section .btn-primary {
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+    font-weight: 700;
+}
+
+.future-vision-section .btn-primary:hover {
+    background-color: #e6b300;
+}
+
+/* Comparison Section */
+.comparison-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.comparison-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.comparison-item {
+    display: flex;
+    flex-direction: column; /* Default to column for small screens */
+    margin-bottom: 60px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* Common styling for comparison columns */
+.comparison-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally within column */
+    padding: 20px;
+    text-align: center; /* Center text by default */
+    flex: 1; /* Allow columns to grow and shrink */
+}
+
+.comparison-column img {
+    width: 100%; /* Image takes full width of its column on mobile */
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.comparison-column .image-label {
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    padding: 8px 15px;
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 15px;
+    width: fit-content; /* Adjust width to content */
+    border-radius: 4px;
+}
+
+.comparison-column h4 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.comparison-column p {
+    font-size: 1em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    text-align: justify; /* Paragraph align */
+}
+
+/* Desktop layout for comparison items */
+@media (min-width: 992px) {
+    .comparison-item {
+        flex-direction: row; /* Two columns on larger screens */
+        justify-content: space-between; /* Distribute space between columns */
+        align-items: flex-start; /* Align columns to the top */
+    }
+
+    .comparison-column {
+        flex: 0 0 48%; /* Each column takes approx 48% width, creating two columns */
+        max-width: 48%;
+        padding: 30px;
+        text-align: left; /* Align text left on desktop */
+    }
+
+    .comparison-column img {
+        width: 100%; /* Image takes full width of its 40% column */
+        height: 300px; /* Adjust height for desktop */
+    }
+
+    .comparison-column .image-label {
+        align-self: flex-start; /* Align label to the start of the column */
+        margin-left: 0;
+    }
+
+    .comparison-column p {
+        text-align: justify; /* Ensure paragraph alignment */
+    }
+}
+
+
+/* Footer Styling - Reusing */
+.main-footer {
+    background: linear-gradient(to right, #1a237e, #4527a0); /* Dark blue to purple gradient */
+    color: var(--light-text);
+    padding: 60px 0;
+    font-size: 0.95em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--light-text);
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    font-size: 1em;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-form button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    color: var(--light-text);
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #0056b3;
+}
+
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--light-text);
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.social-icons-footer i {
+    font-size: 2em;
+    color: var(--accent-color);
+    margin-top: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .research-areas-section .container,
+    .process-steps {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    /* Comparison Section Specific Responsive Styles */
+    .comparison-item {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+    }
+
+    .comparison-column {
+        flex: 0 0 100%; /* Each column takes full width on smaller screens */
+        max-width: 100%;
+    }
+
+    .comparison-column img {
+        width: 100%; /* Image takes full width of its column */
+        height: 200px; /* Adjust height for mobile */
+    }
+
+    .comparison-column .image-label {
+        margin-bottom: 10px;
+        align-self: center; /* Center label on small screens */
+    }
+
+    .comparison-column p {
+        text-align: justify; /* Maintain justify alignment for paragraphs */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .main-nav {
+        order: 3;
+        flex-basis: 100%;
+        margin-top: 15px;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .header-actions {
+        order: 2;
+    }
+
+    .research-hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .research-hero-section p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section h3::after {
+        left: 0;
+    }
+}
+
+.main-nav ul li#loginBtnContainer {
+    margin-left: 80px; /* Adjust this value to increase/decrease the gap */
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px; /* Adjust based on your logo size */
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+}

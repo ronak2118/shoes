@@ -1,0 +1,820 @@
+/* General Styling - Reusing from previous CSS files for consistency */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --accent-color: #ffc107;
+    --dark-text: #343a40;
+    --light-text: #f8f9fa;
+    --background-light: #ffffff;
+    --background-dark: #212529;
+    --border-color: #dee2e6;
+    --success-color: #28a745;
+    --error-color: #dc3545; /* Added error color */
+
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #f8f9fa; /* Light background */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    color: var(--dark-text);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Header Styling - Reusing */
+.main-header {
+    background-color: var(--background-light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-primary);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 1.05em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.main-nav ul li a.active,
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+}
+
+.header-actions .order-now-btn {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-actions .order-now-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Checkout Hero Section */
+.checkout-hero-section {
+    position: relative;
+    color: var(--light-text);
+    text-align: center;
+    height: 500px; /* Adjust based on your needs */
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5); /* Creates the dark overlay effect */
+}
+
+.hero-text-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px; /* To account for fixed header */
+}
+
+.checkout-hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.checkout-hero-section p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .checkout-hero-section {
+        height: 400px;
+    }
+    
+    .checkout-hero-section h1 {
+        font-size: 2.5em;
+    }
+    
+    .checkout-hero-section p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-hero-section {
+        height: 350px;
+    }
+    
+    .checkout-hero-section h1 {
+        font-size: 2em;
+    }
+}
+
+/* Checkout Process Section */
+.checkout-process-section {
+    padding-bottom: 80px;
+}
+
+.checkout-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkout-steps {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 50px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+}
+
+.step-indicator {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.step-indicator .step-number {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    color: var(--dark-text);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.step-indicator.active .step-number {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.step-indicator.active .step-title {
+    color: var(--primary-color);
+}
+
+.step-indicator:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 30px; /* Adjust to align with step number */
+    right: -15px; /* Halfway between steps */
+    width: 30px;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: -1;
+}
+
+/* Form Steps */
+.checkout-form {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+}
+
+.form-step {
+    display: none; /* Hidden by default */
+}
+
+.form-step.active {
+    display: block; /* Show active step */
+}
+
+.form-step h2 {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.form-step h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"], /* Added password type */
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: var(--font-secondary);
+    color: var(--dark-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Split 50 for side-by-side inputs */
+.form-group.split-50 {
+    display: inline-block;
+    width: calc(50% - 10px); /* Adjust for gap */
+    margin-right: 20px;
+    vertical-align: top; /* Align to top if fields are different heights */
+}
+
+.form-group.split-50:last-child {
+    margin-right: 0;
+}
+
+/* Payment Options */
+.payment-options {
+    margin-bottom: 30px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+    background-color: #f0f0f0;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.3); /* Slightly larger radio buttons */
+}
+
+.radio-option label {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--dark-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.radio-option label .fas,
+.radio-option label .fab {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 1.4em;
+}
+
+/* Payment Details (Credit Card, eSewa, FonePay, PayPal) */
+.payment-details {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.payment-details p {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+/* Form Navigation */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.form-navigation .btn-primary {
+    padding: 12px 30px;
+    font-size: 1em;
+}
+
+/* Order Review Section */
+.order-review {
+    background-color: #f8f8f8;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.order-review h4 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.order-review h4:first-of-type {
+    margin-top: 0;
+}
+
+.order-review p {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.review-cart-items {
+    max-height: 300px; /* Limit height for scrollable items */
+    overflow-y: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.review-cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.review-cart-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.review-cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.review-cart-item .review-item-details {
+    flex-grow: 1;
+}
+
+.review-cart-item .name {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 3px;
+}
+
+.review-cart-item .qty-price {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.review-cart-item .review-item-total {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.order-summary-review {
+    background-color: #e9f5ff; /* Light blue background for summary */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+}
+
+.order-summary-review p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--dark-text);
+}
+
+.order-summary-review p span {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.order-summary-review hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 15px 0;
+}
+
+.order-summary-review .total {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.place-order-btn {
+    background-color: var(--success-color); /* Green for place order */
+}
+
+.place-order-btn:hover {
+    background-color: #218838;
+}
+
+/* Footer Styling - Reusing */
+.main-footer {
+    background: linear-gradient(to right, #1a237e, #4527a0); /* Dark blue to purple gradient */
+    color: var(--light-text);
+    padding: 60px 0;
+    font-size: 0.95em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--light-text);
+}
+
+
+.footer-section p {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    font-size: 1em;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-form button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    color: var(--light-text);
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #0056b3;
+}
+
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--light-text);
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.social-icons-footer i {
+    font-size: 2em;
+    color: var(--accent-color);
+    margin-top: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .checkout-steps {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .step-indicator {
+        flex-basis: 50%; /* Two indicators per row */
+        margin-bottom: 20px;
+    }
+    .step-indicator:nth-child(even)::after {
+        content: none; /* Remove connector for the second item in a row */
+    }
+    .step-indicator:nth-child(odd):not(:last-child)::after {
+        right: 0; /* Adjust connector position */
+        transform: translateX(50%); /* Center it on the right edge */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .main-nav {
+        order: 3;
+        flex-basis: 100%;
+        margin-top: 15px;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .header-actions {
+        order: 2;
+    }
+
+    .checkout-hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .checkout-hero-section p {
+        font-size: 1em;
+    }
+
+    .checkout-form {
+        padding: 25px;
+    }
+
+    .form-group.split-50 {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step-indicator {
+        flex-basis: 100%; /* One indicator per row */
+        margin-bottom: 15px;
+    }
+    .step-indicator:not(:last-child)::after {
+        content: none; /* Remove all connectors */
+    }
+    .form-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .form-navigation .btn-primary {
+        width: 100%;
+    }
+
+    .footer-section h3::after {
+        left: 0;
+    }
+}
+
+.main-nav ul li#loginBtnContainer {
+    margin-left: 80px; /* Adjust this value to increase/decrease the gap */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px; /* Adjust based on your logo size */
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+}
