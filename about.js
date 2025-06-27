@@ -7,67 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sample data for team members' portfolios
     const teamPortfolios = {
         
-        priyanka: {
-            image: 'images/priyanka.jpeg',
-            name: 'Priyanka Kumari Sah',
-            role: 'Head of Materials Innovation',
-            about: "Priyanka is a pioneer in sustainable materials research, constantly seeking new eco-friendly solutions for our footwear. Her work is crucial in Shoe Haven's commitment to environmental responsibility and material excellence.",
-            details: {
-                name: 'Priyanka Kumari Sah',
-                phone: '+977-9702147841',
-                experience: '8 Years',
-                address: 'Kathmandu',
-                freelance: 'Available',
-                behance: 'Priyanka Kumari Sah' // Example custom detail
-            },
-            social: {
-                facebook: '#',
-                twitter: '#',
-                linkedin: '#'
-            },
-            cv: '#'
-        },
-        anubhav: {
-            image: 'images/anubhav.jpeg',
-            name: 'Anubhav Pradhan',
-            role: 'Production Manager',
-            about: "Anubhav ensures every shoe we produce meets the highest standards of quality and efficiency. His expertise in supply chain management and manufacturing processes is vital to our seamless operation and timely deliveries.",
-            details: {
-                name: 'Anubhav Pradhan',
-                phone: '+977-9745556666',
-                experience: '12 Years',
-                address: 'Budhanilkantha',
-                freelance: 'Available',
-                github: 'Anubhav Pradhan' // Example custom detail
-            },
-            social: {
-                facebook: '#',
-                twitter: '#',
-                linkedin: '#'
-            },
-            cv: '#'
-        },
-        pralon: {
-            image: 'images/pralon.jpeg',
-            name: 'Pralon Basnet',
-            role: 'Marketing & Brand Strategist',
-            about: "Pralon is the creative force behind our brand's voice and market presence. He crafts compelling narratives and campaigns that resonate with our customers, bringing the Shoe Haven story to life.",
-            details: {
-                name: 'Pralon Basnet',
-                phone: '+977-9842474528',
-                experience: '7 Years',
-                address: 'Bhaktapur, Kathmandu',
-                freelance: 'Available',
-                instagram: 'Pralon Basnet' // Example custom detail
-            },
-            social: {
-                facebook: '#',
-                twitter: '#',
-                linkedin: '#'
-            },
-            cv: '#'
-        }
-    };
+        
 
     // Function to open the modal and populate content
     function openPortfolioModal(memberId) {
